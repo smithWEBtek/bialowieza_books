@@ -38,10 +38,10 @@ end
 @books = Book.all
 @users = User.all.size
 
-# Create List_Items
+# Create Order_Items
 @books.each do |book|
-  ListItem.create(
-    shopping_cart_id: rand(1..@users),
+  OrderItem.create(
+    cart_id: rand(1..@users),
     book_id: book.id
   )
 end
