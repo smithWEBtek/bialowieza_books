@@ -1,10 +1,9 @@
 class OrderItemsController < ApplicationController
 
   def create
-   @cart = current_cart
-   @item = @cart.order_items.build(item_params)
-   @cart.save
-   session[:cart_id] = @cart.id
+   @item = current_user.cart.order_items.build(item_params)
+   @item.save
+   session[:cart_id] = current_user.cart.id
    redirect_to cart_path
   end
 
@@ -18,6 +17,6 @@ class OrderItemsController < ApplicationController
 
   private
   def item_params
-    params.require(:order_item).permit(:quantity, :product_id)
+    params.require(:order_item).permit(:quantity, :book_id)
   end
 end
