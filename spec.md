@@ -16,24 +16,24 @@
 [] Move logic in controllers to models
 [] Use helper methods in controllers as needed for views
 [] Views use partials as needed in views
-<!--
+
 Model Associations:
 User
 -has_one :shopping_cart
 
 Shopping_Cart(current list)
 -belongs_to :user
--has_many :list_items
--has_many :books, through: :list_items
+-has_many :order_items
+-has_many :books, through: :order_items
 
-List_Item(books added to shopping cart, join table between book and shopping cart)
+Order_Item(books added to shopping cart, join table between book and shopping cart)
 -belongs_to :book
 -belongs_to :shopping_cart
 
 Book
 -belongs_to :author
--has_many :list_items
--has_many :shopping_carts, through: :list_items
+-has_many :order_items
+-has_many :shopping_carts, through: :order_items
 
 Author
--has_many :books -->
+-has_many :books
