@@ -10,6 +10,21 @@
   </head>
 
   <body>
+    <font color="green"><strong><h1>Białowieża Bookstore</h1></font>
+    <% if current_user %>
+      <strong><h3>Logged in as: <%= current_user.name.capitalize %></strong></h3>
+      <h3>Email: <%= current_user.email %></h3>
+      <strong><%= link_to "Shopping Cart", order_items_path %></strong><br>
+      <strong><%= link_to "Log Out", logout_path %></strong>
+    <% else %>
+      <%= link_to "Log In", login_path %><br>
+      <%= link_to "Sign up for a Bialowieza Account", signup_path %><br>
+      <%= link_to "Sign in with Github", "/auth/github"%>
+    <% end %>
+    <%= content_tag(:div, flash[:error], id: "flash_error") if flash[:error] %>
+    <%= content_tag(:div, flash[:notice], id: "flash_notice") if flash[:notice] %>
+    <%= content_tag(:div, flash[:alert], id: "flash_alert") if flash[:alert] %>
+
     <%= yield %>
   </body>
 </html>
