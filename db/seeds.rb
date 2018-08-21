@@ -42,6 +42,7 @@ end
 @books.each do |book|
   OrderItem.create(
     cart_id: rand(1..@users),
-    book_id: book.id
+    book_id: book.id,
+    quantity: rand(1..3)
   )
 end
