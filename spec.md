@@ -19,21 +19,21 @@
 
 Model Associations:
 User
--has_one :shopping_cart
+-has_one :cart
 
-Shopping_Cart(current list)
+Cart(current list)
 -belongs_to :user
 -has_many :order_items
 -has_many :books, through: :order_items
 
-Order_Item(books added to shopping cart, join table between book and shopping cart)
+Order_Item(books added to cart, join table between book and cart)
 -belongs_to :book
--belongs_to :shopping_cart
+-belongs_to :cart
 
 Book
 -belongs_to :author
 -has_many :order_items
--has_many :shopping_carts, through: :order_items
+-has_many :carts, through: :order_items
 
 Author
 -has_many :books
