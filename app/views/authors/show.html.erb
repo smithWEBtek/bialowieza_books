@@ -5,6 +5,8 @@
   <strong><h3> Title: <%= link_to book.title, author_book_path(book) %></h3></strong>
   <strong><p> Genre: <%= book.genre %></p></strong>
   <strong><p> Price: $ <%= book.price %></p></strong>
+  <strong><p> Summary: $ <%= book.summary %></p></strong>
+
   <%= link_to "Add to Cart", add_book_path(book) %><img src="https://image.freepik.com/free-icon/shopping-cart-of-checkered-design_318-50865.jpg" width="30" height="30">
 
   <p><strong> Summary: </strong> <%= book.summary %></p>
