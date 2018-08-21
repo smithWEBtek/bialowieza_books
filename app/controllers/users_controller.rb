@@ -8,7 +8,7 @@ class UsersController < ApplicationController
     if @user.save
       session[:user_id] = @user.id
       @cart = Cart.create(user_id: @user.id)
-      redirect_to welcome_path, alert: "You have successfully created a new user account."
+      redirect_to root_path, alert: "You have successfully created a new user account."
     else
       render 'users/new'
     end

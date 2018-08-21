@@ -7,6 +7,8 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :order_items
+  post '/order_items/create/:id', to: 'orderitems#create', as: 'add_book'
+  resource :cart, only: [:show]
   resources :authors do
     resources :books, only: [:show]
   end

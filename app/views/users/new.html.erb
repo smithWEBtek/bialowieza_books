@@ -1,0 +1,11 @@
+<h3>New User Registration</h3>
+<%= render partial: "errors" %>
+
+<%= form_for @user do |f| %>
+  Name: <%= f.text_field :name %> <br><br>
+  Email: <%= f.text_field :email %> <br><br>
+  Password: <%= f.password_field :password, placeholder: "6-12 characters" %><br><br>
+  Confirm password: <%= f.password_field :password_confirmation, placeholder: "6-12 characters" %><br><br>
+  <%= f.submit %>
+<% end %>
+<button><%= link_to "Home", root_path %></button>
