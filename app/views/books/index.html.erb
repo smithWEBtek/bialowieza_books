@@ -1,6 +1,5 @@
 <% @books.each do |book| %>
   <p><%= book.title %> | <%= number_to_currency book.price %>
   <p>Title: <%= link_to book.title, book_path(book) %><br> Author: <%= link_to book.author.name, author_path(book.author) %></p>
-
-
+  <p>Summary: <%= book.summary %></p>
 <% end %>

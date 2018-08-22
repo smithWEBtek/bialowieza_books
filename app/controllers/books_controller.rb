@@ -5,6 +5,7 @@ class BooksController < ApplicationController
   end
 
   def show
+    @order_item = current_user.cart.order_items.new
     @book = Book.find_by(id: params[:id])
     @author = @book.author.name
   end
