@@ -14,12 +14,4 @@ class ApplicationController < ActionController::Base
     !!current_user
   end
 
-  def current_cart
-    if session[:cart_id]
-      Cart.find(session[:cart_id])
-    else
-      Cart.new
-    end
-  end
-  helper_method :current_cart
 end

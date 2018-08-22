@@ -2,6 +2,7 @@ class OrderItemsController < ApplicationController
   before_action :authorize
   def index
     @order_items = current_user.cart.order_items
+    @total_cost = calculate_total
   end
 
   def create
@@ -19,8 +20,13 @@ class OrderItemsController < ApplicationController
     redirect_to cart_path
   end
 
+
   private
   def item_params
     params.require(:order_item).permit(:quantity, :book_id)
+  end
+
+  def calculate_total
+    @total_cost = current_user.cart.order_items.collect { |oi| oi.book.price * oi.quantity }.sum
   end
 end

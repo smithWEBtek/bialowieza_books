@@ -13,8 +13,12 @@ class OrderItem < ApplicationRecord
   def book_summary
     self.book.summary
   end
-  
+
   def author_name
     self.book.author.name
+  end
+
+  def calculate_total
+    self.cart.order_items.collect { |oi| oi.book.price * oi.quantity }.sum
   end
 end
