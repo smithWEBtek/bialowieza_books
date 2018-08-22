@@ -1,8 +1,10 @@
 <h3><%= current_user.name.capitalize %>'s Shopping Cart </h3>
-<ul>
-  <% @order_items.each do |oi| %>
-    <li id="<%= oi.id %>"><strong><%= link_to oi.book_title, book_path(oi.book.id) %></li>
+<% if @order_items.any? %>
+  <% @order_items.each do |item| %>
+    <p><%= item.book.title %> | <%= link_to "Delete", order_item_path(item), :data => {:confirm => "You sure?", :method => "delete"} %></p>
+    <p> Price: <%= number_to_currency item.book.price %> | Quantity: <%= item.quantity %> | Total Price: <%= number_to_currency (item.book.price * item.quantity) %></p>
   <% end %>
-</ul>
-
+<% else %>
+  <p>Your shopping cart is empty.</p>
+<% end %>
 <h3><%= link_to  "Home", root_path %></h3>
