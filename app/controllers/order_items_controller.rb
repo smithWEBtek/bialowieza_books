@@ -9,17 +9,16 @@ class OrderItemsController < ApplicationController
    @item = current_user.cart.order_items.build(item_params)
    @item.save
    session[:cart_id] = current_user.cart.id
-   redirect_to cart_path
+   redirect_to order_items_path
   end
 
   def destroy
-    @order = current_cart
+    @order = current_user.cart
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save
-    redirect_to cart_path
+    redirect_to order_items_path
   end
-
 
   private
   def item_params
