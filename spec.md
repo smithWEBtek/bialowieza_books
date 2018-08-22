@@ -5,17 +5,17 @@
 [x] The "through" part of the has_many through includes at least one user submittable attribute (attribute_name e.g. books.quantity)
 [x] Include reasonable validations for simple model objects (list of model objects with validations e.g. User, Recipe, Ingredient, Item)
 [] Include a class level ActiveRecord scope method (model object & class method name and URL to see the working feature e.g. User.most_recipes URL: /users/most_recipes)
-[] Include signup (how e.g. Devise)
-[] Include login (how e.g. Devise)
-[] Include logout (how e.g. Devise)
+[x] Include signup (how e.g. Devise)
+[x] Include login (how e.g. Devise)
+[x] Include logout (how e.g. Devise)
 [] Include third party signup/login (how e.g. Devise/OmniAuth)
-[] Include nested resource show or index (URL e.g. authors/1/books/1)
+[x] Include nested resource show or index (URL e.g. authors/1/books/1)
 [] Include nested resource "new" form (URL e.g. users/:user_id/shopping_cart/new)
-[] Include form display of validation errors (form URL e.g. /recipes/new)
-[] The application is DRY
-[] Move logic in controllers to models
-[] Use helper methods in controllers as needed for views
-[] Views use partials as needed in views
+[x] Include form display of validation errors (form URL e.g. /recipes/new)
+[x] The application is DRY
+[x] Move logic in controllers to models
+[x] Use helper methods in controllers as needed for views
+[x] Views use partials as needed in views
 
 Model Associations:
 User

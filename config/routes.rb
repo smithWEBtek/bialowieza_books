@@ -1,9 +1,10 @@
 Rails.application.routes.draw do
+  resources :wish_lists
   get '/login', to: 'sessions#new'
   post '/sessions', to: 'sessions#create'
   get '/logout', to: 'sessions#destroy'
   get '/auth/github/callback', to: 'sessions#create'
-  root 'books#index'
+  root 'site#index'
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :order_items

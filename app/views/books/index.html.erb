@@ -2,9 +2,5 @@
   <p><%= book.title %> | <%= number_to_currency book.price %>
   <p>Title: <%= link_to book.title, book_path(book) %><br> Author: <%= link_to book.author.name, author_path(book.author) %></p>
 
-  <%= form_for @order_item do |f| %>
-    <%= f.hidden_field :book_id, value: book.id %>
-    <%= f.number_field :quantity %>
-    <%= f.submit "Add to cart"%>
-  <% end %></p>
+
 <% end %>
