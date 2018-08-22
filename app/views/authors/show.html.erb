@@ -1,7 +1,9 @@
+<img style="-webkit-user-select: none;cursor: zoom-in;" src="https://images.wisegeek.com/two-shelves-of-books.jpg" width="1300" height="300">
+
 <h2><%= @author.name %></h2>
 
 <% @author.books.each do |book| %>
-
+  <%= link_to image_tag("https://www.ioba.org/pages/wp-content/uploads/2011/12/alledgesgilt.jpg"), book_path(book) %>
   <strong><h3> Title: <%= link_to book.title, author_book_path(book) %></h3></strong>
   <strong><p> Genre: <%= book.genre %></p></strong>
   <strong><p> Price: <%= number_to_currency book.price %></p></strong>

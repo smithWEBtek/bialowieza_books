@@ -1,7 +1,7 @@
 class OrderItemsController < ApplicationController
   before_action :authorize
   def index
-    @order_items = current_user.cart.order_items
+    @order_items = current_cart.order_items
     @total_cost = calculate_total
   end
 
@@ -13,7 +13,7 @@ class OrderItemsController < ApplicationController
   end
 
   def destroy
-    @order = current_user.cart
+    @order = current_cart
     @item = @order.order_items.find(params[:id])
     @item.destroy
     @order.save
