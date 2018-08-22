@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   get '/logout', to: 'sessions#destroy'
   get '/auth/github/callback', to: 'sessions#create'
   root 'site#index'
+  get '/about', to: 'site#about'
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :order_items

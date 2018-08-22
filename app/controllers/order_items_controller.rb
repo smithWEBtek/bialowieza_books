@@ -1,4 +1,8 @@
 class OrderItemsController < ApplicationController
+  before_action :authorize
+  def index
+    @order_items = current_user.cart.order_items
+  end
 
   def create
    @item = current_user.cart.order_items.build(item_params)
