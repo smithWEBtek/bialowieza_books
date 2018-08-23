@@ -1,6 +1,8 @@
 class OrderItem < ApplicationRecord
   belongs_to :cart
   belongs_to :book
+  scope :created_before, -> (time) {where("created_at < ?", time) }
+  scope :most_popular, -> {order(quantity: :desc).limit(3)}
 
   def book_title
     self.book.title
