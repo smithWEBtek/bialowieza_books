@@ -7,14 +7,13 @@
   <strong><h3> Title: <%= link_to book.title, author_book_path(book) %></h3></strong>
   <strong><p> Genre: <%= book.genre %></p></strong>
   <strong><p> Price: <%= number_to_currency book.price %></p></strong>
-  <strong><p> Summary: $ <%= book.summary %></p></strong>
+  <strong><p> Summary: <%= book.summary %></p></strong>
 
   <%= form_for @order_item do |f| %>
     <%= f.hidden_field :book_id, value: book.id %>
     <%= f.number_field :quantity %>
     <%= f.submit "Add to cart"%>
-  <% end %>
-  <p><strong> Summary: </strong> <%= book.summary %></p>
+  <% end %><br>
 <% end %>
 
 <%= link_to "Create Custom Order", new_author_book_path(@author) %>

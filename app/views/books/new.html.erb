@@ -1,6 +1,5 @@
 <p>Request a new book by <%= @author.name %></p>
 <%= form_for @book, :url => url_for(:controller => 'books', :action => 'create') do |f| %>
-  <%= f.hidden_field :price, value: 30 %>
   Title:<%= f.text_field :title, placeholder: "Request Book Title" %>
   Genre:<%= f.text_field :genre, placeholder: "Mystery, Biography" %>
 

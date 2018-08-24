@@ -4,6 +4,15 @@ class SessionsController < ApplicationController
   end
 
   def create
+    # log in via omniauth or create account
+    if auth_hash = request.env['omniauth.auth']
+      user = User.find_or_create_by_omniauth(auth_hash)
+      session[:user_id] = user.id
+      if user.cart == nil
+        user.build_cart
+        user.save
+      end
+      redirect_to root_path
     # log in via Bialowieza user account
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
