@@ -1,8 +1,9 @@
 <img style="-webkit-user-select: none;cursor: zoom-in;" src="https://images.wisegeek.com/two-shelves-of-books.jpg" width="1300" height="300">
 
 <strong><h2><%= @book.title %></h2></strong>
-<strong><h3> Author: <%= link_to @book.author.name, author_path(@book.author) %></h3></strong>
-<strong><p> Price: <%= number_to_currency @book.price %></p></strong>
+<strong><h3> Author: </strong><%= link_to @book.author.name, author_path(@book.author) %></h3>
+<strong>Price: </strong><p><%= number_to_currency @book.price %></p>
+<strong>Genre: </strong><p><%= @book.genre %></p>
 <strong>Summary:</strong> <p><%= @book.summary %></p>
 
 <%= form_for @order_item do |f| %>

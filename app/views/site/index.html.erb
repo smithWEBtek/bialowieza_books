@@ -9,4 +9,5 @@
     <p>Title: <%= link_to book.title, book_path(book) %><br> Author: <%= link_to book.author.name, author_path(book.author) %></p>
   <% end %>
 </ul>
+
 <%= link_to "Back to Top", root_path %>
