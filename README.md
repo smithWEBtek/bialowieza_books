@@ -1,4 +1,4 @@
-This is a Rails app that displays books on a bookstore e-commerce site. 
+This is a Rails app that displays books on a bookstore e-commerce site.
 Users can:
 
     sign in via GitHub or create an account;
@@ -20,3 +20,7 @@ Run 'rails s' to view the app.
 Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/dakaras/bialowieza_books/issues. ALl contributors are expected to adhere to the contributor code of conduct.
+
+License
+
+The app is available as open source under the terms of the MIT License.
