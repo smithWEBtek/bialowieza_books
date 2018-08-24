@@ -21,7 +21,7 @@ Run 'rails s' to view the app.
 
 Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/dakaras/bialowieza_books/issues. ALl contributors are expected to adhere to the contributor code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/dakaras/bialowieza_books/issues. All contributors are expected to adhere to the contributor code of conduct.
 
 License
 
