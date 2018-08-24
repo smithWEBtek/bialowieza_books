@@ -9,13 +9,11 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :sessions, only: [:new, :create, :destroy]
   resources :authors do
-    resources :books, only: [:new, :create]
+    resources :books, only: [:new, :create, :show]
   end
   resources :order_items
   post '/order_items/create/:id', to: 'orderitems#create', as: 'add_book'
-  resources :authors do
-    resources :books, only: [:show]
-  end
+
   resources :books, only: [:show, :index]
   resources :authors, only: [:show, :index]
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

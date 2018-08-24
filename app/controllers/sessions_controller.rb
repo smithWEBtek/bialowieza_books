@@ -14,6 +14,7 @@ class SessionsController < ApplicationController
       end
       redirect_to root_path
     # log in via Bialowieza user account
+    end 
     @user = User.find_by(email: params[:email])
     if @user && @user.authenticate(params[:password])
       session[:user_id] = @user.id
