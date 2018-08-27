@@ -6,6 +6,7 @@ class User < ApplicationRecord
   validates :email, presence: true
   validates :email, uniqueness: true
   validates :password, length: { in: 6..12 }
+  scope :starts_with, -> (name) { where("name like ?", "#{name}%")}
 
   def self.find_or_create_by_omniauth(auth_hash)
     self.where(:email => auth_hash['info']['email']).first_or_create do |user|
