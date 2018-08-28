@@ -1,6 +1,7 @@
 class OrderItemsController < ApplicationController
   before_action :authorize
   before_action :logged_in
+  
   def index
     @order_items = current_cart.order_items
     @total_cost = calculate_total
