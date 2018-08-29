@@ -18,4 +18,9 @@ class Author < ApplicationRecord
     end
     names.sort
   end
+
+  def self.most_published
+    self.all.sort_by { |author| author.books.size}.reverse
+  end
+
 end

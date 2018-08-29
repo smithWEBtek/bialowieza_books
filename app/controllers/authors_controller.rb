@@ -10,4 +10,9 @@ class AuthorsController < ApplicationController
     @books = @author.books
     @order_item = current_user.cart.order_items.new
   end
+
+  def authors_list
+    @authors = Author.all.most_published
+  end
+
 end
